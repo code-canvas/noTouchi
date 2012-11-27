@@ -2,7 +2,7 @@
 
 jQuery plugin to stop customers from changing sensitive software settings
 
-###How many times have you gotten this call...
+###How many times have you heard this?
 
 **Customer:** Yeah... I wasn't thinking and I changed some important settings. My software isn't working now.
 
