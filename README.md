@@ -24,4 +24,4 @@ noTouchi assures you that sensitive changes will only be made with the help of a
 
 Check out the demo and example code 
 
-<a href="http://notouchi.me" target="_blank">noTouchi.me website</a>
+<a href="http://notouchi.me" target="_blank">noTouchi.me</a>
