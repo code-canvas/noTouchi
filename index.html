@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>noTouchi - jQuery plugin</title>
+	<!-- 
+		bootstrap - (needed if you don't already use it in the project) 
+	-->
+	<link rel="stylesheet" type="text/css" href="support/bootstrap.min.css" />
+
+	<!-- noTouchi styles -->
+	<link rel="stylesheet" type="text/css" href="noTouchi.css" />
+</head>
+<body>
+	<style>
+
+	body
+	{
+		background: rgb(255,255,255); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(241,241,241,1)), color-stop(51%,rgba(225,225,225,1)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+	}
+	h3
+	{
+		margin: 40px 0 7px;
+	}
+	#container
+	{
+		background-color: #FFFFFF;
+	    box-shadow: 0 0 22px #DDDDDD;
+	    margin: 10px auto;
+	    padding: 25px;
+	    width: 850px;
+	}
+	.conversation
+	{
+		border-bottom: 1px dotted #DDDDDD;
+		margin-left: 20px;
+		padding-bottom: 12px;
+    	padding-top: 8px;
+	}
+
+
+	.com {
+	    color: #93A1A1;
+	}
+	.lit {
+	    color: #195F91;
+	}
+	.pun, .opn, .clo {
+	    color: #93A1A1;
+	}
+	.fun {
+	    color: #DC322F;
+	}
+	.str, .atv {
+	    color: #DD1144;
+	}
+	.kwd, .prettyprint .tag {
+	    color: #1E347B;
+	}
+	.typ, .atn, .dec, .var {
+	    color: teal;
+	}
+	.pln {
+	    color: #48484C;
+	}
+	.prettyprint {
+	    background-color: #F7F7F9;
+	    border: 1px solid #E1E1E8;
+	    padding: 8px;
+	}
+	.prettyprint.linenums {
+	    box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset;
+	}
+	ol.linenums {
+	    margin: 0 0 0 33px;
+	}
+	ol.linenums li {
+	    color: #BEBEC5;
+	    line-height: 20px;
+	    padding-left: 12px;
+	    text-shadow: 0 1px 0 #FFFFFF;
+	}
+
+
+	</style>
+	<div id="container">
+		<h1>noTouchi</h1>
+		<legend>jQuery plugin to stop customers from changing sensitive software settings</legend>
+		<p>How many times have you got this call... </p>
+
+		<p class="conversation"><label class="label">Customer: </label> Yeah... I wasn't thinking and I changed some important settings. My software isn't working now. </p>
+
+		<p class="conversation"><label class="label label-warning">You: </label> Why did you do that?</p>
+
+		<p class="conversation"><label class="label">Customer: </label> I don't know.</p>
+
+		<p class="conversation"><label class="label label-warning">You: </label> Didn't we ask you NOT to touch those settings?</p>
+
+		<p class="conversation"><label class="label">Customer: </label> Yes.</p>
+
+		<h3>Here's a solution</h3>
+
+		<p>With one line of jQuery and one line of PHP... you can protect sensitive areas in your web applications.</p>
+
+		<p><strong>noTouchi</strong> assures you that sensitive changes will only be made with the help of a technical support person.</p>
+
+		<h3>How it works</h3>
+
+		<p>	
+			<strong>noTouchi</strong> will generate a random four digit support code. The technician then returns a four digit key based on these rules:<br> 
+
+			<ul>	
+				<li>first digit: the first number</li>
+				<li>remaining digits: multiply the last number by 100</li>
+
+			</ul>
+
+			For instance, if the support code is <label class="label"><strong>2708</strong></label> the support key would be <label class="label"><strong>2800</strong></label>
+
+			<ul>	
+				<li>2 is the first number</li>
+				<li>8 x 100 = 800</li>
+			</ul>
+		</p>
+		<p><label class="label label-success">Note: </label> These are just the default settings. You can build your own custom version of the key validation rules.</p>
+
+		<h3>Try it out</h3>
+		<p>Click the button below. Once you provide the correct key, the PHP component will create a 5 minute support session on the server... allowing you to make necessary changes.</p>
+		
+		<p><button id="btn_tryit" onClick="runme();" class="btn btn-large">Try noTouchi</button></p>
+
+		<h3>Download</h3>
+		<p><strong>noTouchi</strong> is open source and hosted at Github. So... you can make changes :-)</p>
+		<p>Head on over and <a href="">download the source</a>... or better yet, <a href="">fork it</a> and make <strong>noTouchi</strong> really awesome!
+		</p>
+
+		<h3>How to use</h3>
+		<p> Insert one line of jQuery into your ajax success event:</p>
+		<p><code>if ( $("body").noTouchi({"response" : msg}) != true ) return false;</code></p>
+
+		<p>Insert one line into your PHP file above the content you want to protect:</p>
+		<p><code>require("noTouchi.php");</code></p>
+
+		<h3>Simple Example</h3>
+		<p>Super easy... with just one line of code</p>
+		<pre class="prettyprint linenums">
+$.ajax({
+	type: "POST",
+	url: "your.php",
+	success: function(msg){
+
+		//evaluate the msg for a noTouchi response
+		if ( $("body").noTouchi({"response" : msg}) != true ) return false;
+		
+		//your code to execute once a session is created
+	}
+});</pre>
+		</p>
+		<h3>Long Example</h3>
+		<p>Options allow you to supply a custom php script name/location</p>
+		<p>
+		<pre class="prettyprint linenums">
+$.ajax({
+	type: "POST",
+	url: "your.php",
+	success: function(msg){
+
+		//evaluate the msg for a noTouchi response
+		//you can even specify a custom location/name for the noTouchi php component
+		var a = $("body").noTouchi(
+			{
+				"php_postTo" : "./yourFolder/yourFile.php",
+				"response" : msg
+			}
+		);
+
+		if ( a != true ) return false;
+		
+		//your code to execute once a session is created
+	}
+});</pre>
+		</p>
+
+		<p><strong>noTouchi</strong> by Jason Burgess - Open source and <a href="">hosted at Github</a></p>
+	</div>
+
+	<script src="support/jquery-1.8.3.js"></script>
+	<script src="noTouchi.js"></script>
+
+	<script>
+
+		function runme(){
+
+			$("#btn_tryit").text("Working...");
+
+			$.ajax({
+				type: "POST",
+				url: "json.php",
+				error: function(x, ts, err){
+					alert(ts + " " + err);
+				},
+				timeout: function(){
+					$("#btn_tryit").text("Try noTouchi");
+				},
+				success: function(msg){
+
+					$("#btn_tryit").text("Try noTouchi");
+
+					//one line of jQuery to use noTouchi
+					if ( $("body").noTouchi({"response" : msg}) != true ) return false;
+					
+					alert(msg);
+				}
+			});
+		}
+
+		$(function(){
+
+			// make code pretty
+    		window.prettyPrint && prettyPrint();
+		});
+	</script>
+</body>
+</html>
