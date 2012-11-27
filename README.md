@@ -24,4 +24,4 @@ noTouchi assures you that sensitive changes will only be made with the help of a
 
 Check out the demo and example code 
 
-http://www.notouchi.me
+http://notouchi.me
